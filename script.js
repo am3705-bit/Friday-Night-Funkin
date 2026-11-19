@@ -127,6 +127,7 @@ backButton.addEventListener("click", () => {
 });
 
 
+
 /* =====================================
    WEEK 1 — ORIGINAL FNF SONG CATALOG
 ===================================== */
@@ -143,66 +144,6 @@ const week1Songs = [
     { name: "Bopeebo", version: "Erect" },
     { name: "Fresh", version: "Erect" },
     { name: "DadBattle", version: "Erect" },
-
-/* =====================================
-   WEEK 1 — DIFFICULTY SYSTEM
-===================================== */
-
-const songDifficulties = [
-    "Easy",
-    "Normal",
-    "Hard",
-    "Chaos",
-    "Nightmare",
-    "Expert",
-    "SUPER"
-];
-
-// SUPER UNLOCK REQUIREMENT
-
-const superUnlockRequirement = 90;
-
-// PLAYER MASTERY DATA
-
-let playerMastery = {};
-
-// CHECK IF SUPER IS UNLOCKED
-
-function isSuperUnlocked() {
-
-    const masteryScores = Object.values(playerMastery);
-
-    if (masteryScores.length === 0) {
-        return false;
-    }
-
-    const totalMastery = masteryScores.reduce(
-        (total, score) => total + score,
-        0
-    );
-
-    const averageMastery =
-        totalMastery / masteryScores.length;
-
-    return averageMastery >= superUnlockRequirement;
-
-}
-
-// GET AVAILABLE DIFFICULTIES
-
-function getAvailableDifficulties() {
-
-    if (isSuperUnlocked()) {
-        return [...songDifficulties];
-    }
-
-    return songDifficulties.filter(
-        difficulty => difficulty !== "SUPER"
-    );
-
-}
-
-console.log("Available difficulties:", getAvailableDifficulties());
 
     // WEEK 2
     { name: "Spookeez", version: "Original" },
@@ -257,6 +198,59 @@ console.log("Available difficulties:", getAvailableDifficulties());
 ];
 
 console.log("Week 1 song catalog loaded:", week1Songs.length);
+
+
+/* =====================================
+   WEEK 1 — DIFFICULTY SYSTEM
+===================================== */
+
+const songDifficulties = [
+    "Easy",
+    "Normal",
+    "Hard",
+    "Chaos",
+    "Nightmare",
+    "Expert",
+    "SUPER"
+];
+
+const superUnlockRequirement = 90;
+
+let playerMastery = {};
+
+function isSuperUnlocked() {
+
+    const masteryScores = Object.values(playerMastery);
+
+    if (masteryScores.length === 0) {
+        return false;
+    }
+
+    const totalMastery = masteryScores.reduce(
+        (total, score) => total + score,
+        0
+    );
+
+    const averageMastery =
+        totalMastery / masteryScores.length;
+
+    return averageMastery >= superUnlockRequirement;
+
+}
+
+function getAvailableDifficulties() {
+
+    if (isSuperUnlocked()) {
+        return [...songDifficulties];
+    }
+
+    return songDifficulties.filter(
+        difficulty => difficulty !== "SUPER"
+    );
+
+}
+
+console.log("Available difficulties:", getAvailableDifficulties());
 
 
 /* =====================================
