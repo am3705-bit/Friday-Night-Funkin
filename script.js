@@ -144,6 +144,66 @@ const week1Songs = [
     { name: "Fresh", version: "Erect" },
     { name: "DadBattle", version: "Erect" },
 
+/* =====================================
+   WEEK 1 — DIFFICULTY SYSTEM
+===================================== */
+
+const songDifficulties = [
+    "Easy",
+    "Normal",
+    "Hard",
+    "Chaos",
+    "Nightmare",
+    "Expert",
+    "SUPER"
+];
+
+// SUPER UNLOCK REQUIREMENT
+
+const superUnlockRequirement = 90;
+
+// PLAYER MASTERY DATA
+
+let playerMastery = {};
+
+// CHECK IF SUPER IS UNLOCKED
+
+function isSuperUnlocked() {
+
+    const masteryScores = Object.values(playerMastery);
+
+    if (masteryScores.length === 0) {
+        return false;
+    }
+
+    const totalMastery = masteryScores.reduce(
+        (total, score) => total + score,
+        0
+    );
+
+    const averageMastery =
+        totalMastery / masteryScores.length;
+
+    return averageMastery >= superUnlockRequirement;
+
+}
+
+// GET AVAILABLE DIFFICULTIES
+
+function getAvailableDifficulties() {
+
+    if (isSuperUnlocked()) {
+        return [...songDifficulties];
+    }
+
+    return songDifficulties.filter(
+        difficulty => difficulty !== "SUPER"
+    );
+
+}
+
+console.log("Available difficulties:", getAvailableDifficulties());
+
     // WEEK 2
     { name: "Spookeez", version: "Original" },
     { name: "South", version: "Original" },
