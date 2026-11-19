@@ -108,3 +108,20 @@ function initializeGame() {
 // START GAME
 
 initializeGame();
+
+
+// BACK BUTTON — RETURN TO MAIN MENU
+
+const backButton = document.getElementById("back-to-menu");
+
+backButton.addEventListener("click", () => {
+
+    document.getElementById("story-mode").hidden = true;
+
+    document.getElementById("main-menu").hidden = false;
+
+    gameState.currentScreen = "main-menu";
+
+    gameState.selectedMode = null;
+
+});
