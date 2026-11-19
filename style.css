@@ -204,3 +204,49 @@ footer {
     font-size: 16px;
     cursor: pointer;
 }
+
+
+/* STORY MODE LAYOUT FIX */
+
+#main-menu[hidden] {
+    display: none !important;
+}
+
+#story-mode[hidden] {
+    display: none !important;
+}
+
+#story-mode:not([hidden]) {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex: 1;
+    text-align: center;
+}
+
+#week-list {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 550px;
+    gap: 12px;
+}
+
+#week-list .week-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    background: #171329;
+    color: white;
+    border: 2px solid #00eaff;
+}
+
+#week-list .week-button:disabled {
+    color: #777;
+    border-color: #555;
+}
