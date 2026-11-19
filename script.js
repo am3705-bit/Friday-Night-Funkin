@@ -66,11 +66,23 @@ menuButtons.forEach((button) => {
 
 // OPEN GAME MODES
 
+
 function openMode(mode) {
 
     gameState.selectedMode = mode;
 
     console.log("Opening game mode:", mode);
+
+    if (mode === "story") {
+
+        document.getElementById("main-menu").hidden = true;
+
+        document.getElementById("story-mode").hidden = false;
+
+        gameState.currentScreen = "story-mode";
+
+        return;
+    }
 
     alert(
         "You selected: " +
@@ -79,6 +91,7 @@ function openMode(mode) {
     );
 
 }
+
 
 // GAME INITIALIZATION
 
