@@ -257,3 +257,151 @@ console.log("Available difficulties:", getAvailableDifficulties());
 ];
 
 console.log("Week 1 song catalog loaded:", week1Songs.length);
+
+
+/* =====================================
+   WEEK 1 — SONG SELECTION SYSTEM
+===================================== */
+
+const week1SongScreen = document.getElementById("week1-song-screen");
+const songList = document.getElementById("song-list");
+const difficultyList = document.getElementById("difficulty-list");
+
+const startSongButton = document.getElementById("start-song-button");
+const backToWeeksButton = document.getElementById("back-to-weeks");
+
+let selectedSong = null;
+let selectedDifficulty = null;
+
+// OPEN WEEK 1
+
+document.querySelectorAll(".week-button").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        if (button.dataset.week === "1") {
+
+            document.getElementById("story-mode").hidden = true;
+            week1SongScreen.hidden = false;
+
+            gameState.currentScreen = "week1-songs";
+
+        }
+
+    });
+
+});
+
+// DISPLAY SONGS
+
+function displayWeek1Songs() {
+
+    songList.innerHTML = "";
+
+    week1Songs.forEach((song, index) => {
+
+        const songButton = document.createElement("button");
+
+        songButton.textContent =
+            song.name + " — " + song.version;
+
+        songButton.classList.add("song-button");
+
+        songButton.addEventListener("click", () => {
+
+            selectedSong = index;
+
+            document.querySelectorAll(".song-button").forEach(button => {
+                button.classList.remove("selected");
+            });
+
+            songButton.classList.add("selected");
+
+            updateStartButton();
+
+        });
+
+        songList.appendChild(songButton);
+
+    });
+
+}
+
+// DISPLAY DIFFICULTIES
+
+function displayDifficulties() {
+
+    difficultyList.innerHTML = "";
+
+    getAvailableDifficulties().forEach(difficulty => {
+
+        const difficultyButton = document.createElement("button");
+
+        difficultyButton.textContent = difficulty;
+
+        difficultyButton.classList.add("difficulty-button");
+
+        difficultyButton.addEventListener("click", () => {
+
+            selectedDifficulty = difficulty;
+
+            document.querySelectorAll(".difficulty-button").forEach(button => {
+                button.classList.remove("selected");
+            });
+
+            difficultyButton.classList.add("selected");
+
+            updateStartButton();
+
+        });
+
+        difficultyList.appendChild(difficultyButton);
+
+    });
+
+}
+
+// ENABLE START BUTTON WHEN BOTH ARE SELECTED
+
+function updateStartButton() {
+
+    startSongButton.disabled =
+        selectedSong === null || selectedDifficulty === null;
+
+}
+
+// START SONG PLACEHOLDER
+
+startSongButton.addEventListener("click", () => {
+
+    if (selectedSong === null || selectedDifficulty === null) {
+        return;
+    }
+
+    const song = week1Songs[selectedSong];
+
+    alert(
+        "Song: " + song.name +
+        "\nVersion: " + song.version +
+        "\nDifficulty: " + selectedDifficulty +
+        "\n\nGameplay will be connected in a later step!"
+    );
+
+});
+
+// BACK TO WEEK SELECTION
+
+backToWeeksButton.addEventListener("click", () => {
+
+    week1SongScreen.hidden = true;
+
+    document.getElementById("story-mode").hidden = false;
+
+    gameState.currentScreen = "story-mode";
+
+});
+
+// INITIALIZE SONG SELECTION
+
+displayWeek1Songs();
+displayDifficulties();
