@@ -125,3 +125,75 @@ backButton.addEventListener("click", () => {
     gameState.selectedMode = null;
 
 });
+
+
+/* =====================================
+   WEEK 1 — ORIGINAL FNF SONG CATALOG
+===================================== */
+
+const week1Songs = [
+
+    // TUTORIAL
+    { name: "Tutorial", version: "Original" },
+
+    // WEEK 1
+    { name: "Bopeebo", version: "Original" },
+    { name: "Fresh", version: "Original" },
+    { name: "DadBattle", version: "Original" },
+    { name: "Bopeebo", version: "Erect" },
+    { name: "Fresh", version: "Erect" },
+    { name: "DadBattle", version: "Erect" },
+
+    // WEEK 2
+    { name: "Spookeez", version: "Original" },
+    { name: "South", version: "Original" },
+    { name: "Monster", version: "Original" },
+    { name: "Spookeez", version: "Erect" },
+    { name: "South", version: "Erect" },
+
+    // WEEK 3
+    { name: "Pico", version: "Original" },
+    { name: "Philly Nice", version: "Original" },
+    { name: "Blammed", version: "Original" },
+    { name: "Pico", version: "Erect" },
+    { name: "Philly Nice", version: "Erect" },
+    { name: "Blammed", version: "Erect" },
+
+    // WEEK 4
+    { name: "Satin Panties", version: "Original" },
+    { name: "High", version: "Original" },
+    { name: "M.I.L.F", version: "Original" },
+    { name: "Satin Panties", version: "Erect" },
+    { name: "High", version: "Erect" },
+
+    // WEEK 5
+    { name: "Cocoa", version: "Original" },
+    { name: "Eggnog", version: "Original" },
+    { name: "Winter Horrorland", version: "Original" },
+    { name: "Cocoa", version: "Erect" },
+    { name: "Eggnog", version: "Erect" },
+
+    // WEEK 6
+    { name: "Senpai", version: "Original" },
+    { name: "Roses", version: "Original" },
+    { name: "Thorns", version: "Original" },
+    { name: "Senpai", version: "Erect" },
+    { name: "Roses", version: "Erect" },
+    { name: "Thorns", version: "Erect" },
+
+    // WEEK 7
+    { name: "Ugh", version: "Original" },
+    { name: "Guns", version: "Original" },
+    { name: "Stress", version: "Original" },
+    { name: "Ugh", version: "Erect" },
+
+    // WEEKEND 1
+    { name: "Darnell", version: "Original" },
+    { name: "Lit Up", version: "Original" },
+    { name: "2hot", version: "Original" },
+    { name: "Blazin'", version: "Original" },
+    { name: "Darnell", version: "Erect" }
+
+];
+
+console.log("Week 1 song catalog loaded:", week1Songs.length);
