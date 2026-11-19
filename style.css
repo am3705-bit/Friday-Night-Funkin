@@ -131,3 +131,76 @@ footer {
         font-size: 15px;
     }
 }
+
+
+/* =================================
+   STORY MODE WEEK SELECTION
+================================= */
+
+#story-mode {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 25px;
+}
+
+#story-mode[hidden] {
+    display: none;
+}
+
+#story-mode h2 {
+    color: #ffdf45;
+    font-size: 36px;
+    text-shadow: 3px 3px #e600ff;
+}
+
+#story-mode p {
+    font-size: 20px;
+    color: white;
+}
+
+#week-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.week-button {
+    width: 100%;
+    padding: 12px;
+    background: #171329;
+    color: white;
+    border: 3px solid #555;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    text-shadow: 2px 2px black;
+}
+
+.week-button:not(:disabled) {
+    border-color: #00eaff;
+    color: #00eaff;
+}
+
+.week-button:disabled {
+    color: #777;
+    cursor: not-allowed;
+}
+
+#back-to-menu {
+    padding: 10px 25px;
+    background: #292044;
+    color: white;
+    border: 2px solid #ffdf45;
+    font-size: 16px;
+    cursor: pointer;
+}
