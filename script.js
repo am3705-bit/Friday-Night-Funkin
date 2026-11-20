@@ -309,25 +309,23 @@ function updateStartButton() {
 
 }
 
-// START SONG PLACEHOLDER
-
 startSongButton.addEventListener("click", () => {
+    const songSelectionScreen = document.getElementById("song-selection-screen");
+    const gameplayScreen = document.getElementById("gameplay-screen");
 
-    if (selectedSong === null || selectedDifficulty === null) {
+    if (!gameplayScreen) {
+        alert("Gameplay screen could not be found!");
         return;
     }
 
-    const song = week1Songs[selectedSong];
+    if (songSelectionScreen) {
+        songSelectionScreen.hidden = true;
+    }
 
-    alert(
-        "Song: " + song.name +
-        "\nVersion: " + song.version +
-        "\nDifficulty: " + selectedDifficulty +
-        "\n\nGameplay will be connected in a later step!"
-    );
+    gameplayScreen.hidden = false;
 
+    console.log("Jellyfish Jam gameplay screen opened!");
 });
-
 // BACK TO WEEK SELECTION
 
 backToWeeksButton.addEventListener("click", () => {
