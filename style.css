@@ -475,3 +475,35 @@ footer {
         width: 90%;
     }
 }
+/* JELLYFISH JAM NOTE LANES */
+
+.note-lanes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    width: 100%;
+    max-width: 420px;
+    margin: 20px auto;
+}
+
+.note-lane {
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 12px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    background: rgba(0, 0, 0, 0.45);
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+#opponent-notes .note-lane {
+    border-color: #ffe45c;
+}
+
+#player-notes .note-lane {
+    border-color: #64eaff;
+}
