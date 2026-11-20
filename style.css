@@ -500,10 +500,24 @@ footer {
     border-radius: 10px;
 }
 
-#opponent-notes .note-lane {
+<div id="opponent-notes">
+    <div class="note-lanes">
+        <div class="note-lane">←</div>
+        <div class="note-lane">↓</div>
+        <div class="note-lane">↑</div>
+        <div class="note-lane">→</div>
+    </div>
+</div> {
     border-color: #ffe45c;
 }
 
-#player-notes .note-lane {
+<div id="player-notes">
+    <div class="note-lanes">
+        <div class="note-lane">←</div>
+        <div class="note-lane">↓</div>
+        <div class="note-lane">↑</div>
+        <div class="note-lane">→</div>
+    </div>
+</div> {
     border-color: #64eaff;
 }
