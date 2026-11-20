@@ -377,3 +377,101 @@ footer {
     opacity: 0.4;
     cursor: not-allowed;
 }
+
+/* =================================
+   JELLYFISH JAM GAMEPLAY SCREEN
+================================= */
+
+#gameplay-screen {
+    width: 95%;
+    max-width: 1100px;
+    min-height: 650px;
+    margin: 30px auto;
+    padding: 25px;
+    text-align: center;
+    color: white;
+    background:
+        linear-gradient(rgba(8, 30, 65, 0.25), rgba(8, 30, 65, 0.65)),
+        url("https://images.unsplash.com/photo-1530053969600-caed2596d242?w=1400");
+    background-size: cover;
+    background-position: center;
+    border: 4px solid #7cecff;
+    border-radius: 18px;
+    box-shadow: 0 0 25px #36cfff;
+}
+
+#gameplay-screen h2 {
+    font-size: 38px;
+    color: #fff36b;
+    text-shadow: 3px 3px 5px #00334d;
+}
+
+#song-info {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#game-stage {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    gap: 20px;
+    min-height: 420px;
+    margin-top: 25px;
+}
+
+#opponent-side,
+#player-side {
+    width: 45%;
+    min-height: 350px;
+    padding: 15px;
+    background: rgba(0, 20, 55, 0.55);
+    border: 2px solid white;
+    border-radius: 15px;
+}
+
+#opponent-side h3 {
+    color: #ffe45c;
+}
+
+#player-side h3 {
+    color: #64eaff;
+}
+
+#opponent-notes,
+#player-notes {
+    min-height: 270px;
+}
+
+#song-timer {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#pause-song-button {
+    padding: 12px 30px;
+    background: #ffdc48;
+    color: #222;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#pause-song-button:hover {
+    background: #fff18b;
+    transform: scale(1.05);
+}
+
+@media (max-width: 650px) {
+    #game-stage {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #opponent-side,
+    #player-side {
+        width: 90%;
+    }
+}
