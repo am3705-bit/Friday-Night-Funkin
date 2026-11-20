@@ -501,23 +501,9 @@ footer {
 }
 
 <div id="opponent-notes">
-    <div class="note-lanes">
-        <div class="note-lane">←</div>
-        <div class="note-lane">↓</div>
-        <div class="note-lane">↑</div>
-        <div class="note-lane">→</div>
-    </div>
-</div> {
     border-color: #ffe45c;
 }
 
 <div id="player-notes">
-    <div class="note-lanes">
-        <div class="note-lane">←</div>
-        <div class="note-lane">↓</div>
-        <div class="note-lane">↑</div>
-        <div class="note-lane">→</div>
-    </div>
-</div> {
     border-color: #64eaff;
 }
