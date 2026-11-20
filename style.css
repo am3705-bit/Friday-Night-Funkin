@@ -250,3 +250,130 @@ footer {
     color: #777;
     border-color: #555;
 }
+
+
+/* =====================================
+   WEEK 1 SONG SELECTION DESIGN
+===================================== */
+
+#week1-song-screen {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+    padding: 25px;
+}
+
+#week1-song-screen[hidden] {
+    display: none !important;
+}
+
+#week1-song-screen h2 {
+    color: #ffdf45;
+    font-size: 32px;
+    text-shadow: 3px 3px #e600ff;
+}
+
+#week1-song-screen h3 {
+    color: #00eaff;
+    font-size: 23px;
+}
+
+#week1-song-screen p {
+    font-size: 18px;
+}
+
+/* SONG LIST */
+
+#song-list {
+    width: 100%;
+    max-width: 750px;
+    max-height: 280px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 2px solid #a855f7;
+    border-radius: 10px;
+}
+
+.song-button {
+    width: 100%;
+    padding: 10px;
+    background: #292044;
+    color: white;
+    border: 2px solid #00eaff;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.song-button:hover {
+    background: #a855f7;
+}
+
+.song-button.selected {
+    background: #a855f7;
+    border-color: #ffdf45;
+    box-shadow: 0 0 12px #a855f7;
+}
+
+/* DIFFICULTY SELECTION */
+
+#difficulty-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.difficulty-button {
+    padding: 10px 16px;
+    background: #292044;
+    color: white;
+    border: 2px solid #00eaff;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.difficulty-button:hover {
+    background: #a855f7;
+}
+
+.difficulty-button.selected {
+    background: #a855f7;
+    border-color: #ffdf45;
+    box-shadow: 0 0 12px #a855f7;
+}
+
+/* START AND BACK BUTTONS */
+
+#start-song-button,
+#back-to-weeks {
+    padding: 12px 25px;
+    background: #292044;
+    color: white;
+    border: 2px solid #00eaff;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#start-song-button:hover:not(:disabled),
+#back-to-weeks:hover {
+    background: #a855f7;
+}
+
+#start-song-button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
